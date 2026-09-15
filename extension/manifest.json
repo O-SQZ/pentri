@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "PenTri Local Collector",
+  "version": "1.2.0",
+  "version_name": "v1.20 local preview",
+  "description": "Optional, user-triggered DOM observation export for the standalone PenTri Local workbench.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {"default_title": "PenTri 관찰 수집 탭 열기"},
+  "background": {"service_worker": "worker.js"}
+}

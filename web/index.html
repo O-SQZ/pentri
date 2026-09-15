@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>PenTri Local · 진단 워크벤치</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="/"><span class="brand-mark">P</span><span>PenTri <small>LOCAL WORKBENCH</small></span></a>
+      <div class="sidebar-heading"><span>프로젝트</span><button id="new-project" class="icon-button" aria-label="프로젝트 만들기">＋</button></div>
+      <nav id="projects" aria-label="프로젝트 목록"></nav>
+      <div class="sidebar-bottom"><span class="local-dot"></span><span>AI 처리 위치 · 로컬</span><small id="version">연결 중…</small></div>
+    </aside>
+    <main>
+      <header class="topbar"><span class="breadcrumb">WORKSPACE <span>/</span> 웹 진단</span><div class="topbar-actions"><span id="model-status" class="pill">Ollama 확인 중</span><button id="refresh" class="quiet">새로고침</button></div></header>
+      <div id="notice" role="status" aria-live="polite" hidden></div>
+      <section id="welcome" class="welcome" hidden>
+        <span class="eyebrow">YOUR LOCAL ASSESSMENT SPACE</span>
+        <h1>근거가 남는 진단,<br>로컬에서 시작하세요.</h1>
+        <p>대상을 정하고, 관찰을 검토하고, 조치 확인까지 이어갑니다.<br>설치된 Ollama 모델이 수집된 근거의 분석을 보조합니다.</p>
+        <button id="welcome-create" class="primary">첫 프로젝트 만들기 <span>↗</span></button>
+        <div class="welcome-flow"><span><b>01</b> 범위 설정</span><span><b>02</b> 진단과 증적</span><span><b>03</b> 검토와 보고서</span></div>
+      </section>
+      <section id="workspace" hidden>
+        <div class="page-title"><div><span class="eyebrow">ASSESSMENT PROJECT</span><h1 id="project-title"></h1><p id="project-origin" class="mono"></p></div><span id="network-badge" class="pill"></span></div>
+        <div id="metrics" class="metrics"></div>
+        <nav class="tabs" aria-label="작업 영역"><button data-tab="recon" class="active" aria-current="page">Recon <span>수집·실행</span></button><button data-tab="analyze">Analyze <span>분석·판단</span></button><button data-tab="report">Report <span>증적·보고서</span></button><button data-tab="tools">Tools <span>관찰 가져오기</span></button></nav>
+        <div id="pane"></div>
+      </section>
+      <footer>PenTri Local <span>관찰 → 분석 → 검토 → 보고 → 재점검</span></footer>
+    </main>
+  </div>
+  <dialog id="project-dialog">
+    <form id="project-form">
+      <div class="dialog-title"><div><span class="eyebrow">NEW PROJECT</span><h2>진단 범위 설정</h2></div><button type="button" id="close-dialog" class="icon-button" aria-label="닫기">×</button></div>
+      <label>프로젝트 이름<input name="name" required maxlength="120" placeholder="예: 사내 포털 정기 진단" autocomplete="off"></label>
+      <label>대상 origin<input name="origin" type="url" required placeholder="https://portal.example.com" autocomplete="off"><small>프로토콜과 호스트, 필요한 경우 포트까지만 입력하세요.</small></label>
+      <label>진단 네트워크<select name="networkPolicy"><option value="private">내부망 · 사설 IP / 로컬 테스트 대상</option><option value="public">외부망 포함 · 지정한 공인 대상 허용</option></select></label>
+      <label>정확한 GET 경로 · 한 줄에 하나<textarea name="paths" rows="4" required spellcheck="false">/</textarea><small>최대 20개. 쿼리와 fragment는 제외하며 링크를 자동 추적하지 않습니다.</small></label>
+      <div class="scope-preview"><span class="eyebrow">요청 대상 미리보기</span><div id="create-preview"></div></div>
+      <p id="create-error" class="error-text" role="alert"></p>
+      <button type="submit" class="primary wide">프로젝트 만들기</button>
+      <p class="help">프로젝트를 만든 뒤 실행할 경로를 확인하고 진단을 시작합니다.</p>
+    </form>
+  </dialog>
+</body>
+</html>

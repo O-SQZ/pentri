@@ -1,0 +1,17 @@
+{
+  "name": "pentri-local",
+  "version": "1.20.0-alpha.1",
+  "private": true,
+  "description": "Local-first web assessment workbench with bounded checks, evidence, and Ollama review",
+  "type": "module",
+  "engines": { "node": ">=24.14.0 <25" },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "desktop": "node scripts/desktop.mjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "test:browser": "node scripts/browser-smoke.mjs",
+    "demo": "node scripts/demo-target.mjs",
+    "check": "node scripts/check.mjs",
+    "package:portable": "node scripts/package-portable.mjs"
+  }
+}
