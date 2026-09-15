@@ -11,7 +11,7 @@
 | 단위·통합 회귀 | 46개 통과 | `npm test`; 네트워크·규칙·Ollama mock·API·재검사·저장·마스킹·선택 수집기 |
 | 실제 브라우저 | 통과 | `npm run test:browser`; 임시 독립 Chrome 프로필, 합성 HTTP 대상 |
 | 실제 Ollama | 단일 합성 관찰 구조화 응답 통과 | 아래 별도 결과. 모델 품질 검증 완료는 아님 |
-| Windows/Linux | CI 구성 | 실제 결과는 GitHub Actions 실행에서 확인. Mac 검증을 다른 OS 통과로 간주하지 않음 |
+| Windows/macOS/Linux CI | 세 OS 테스트·휴대용 빌드 통과 | [코드 ba38fa6 검증 실행](https://github.com/O-SQZ/pentri/actions/runs/34956534621). Windows 실제 데스크톱 UI와 미니PC 실기 검증은 별도 |
 | 미니PC·SSH | 실행 구조/운영 문서 제공 | 실제 별도 미니PC·SSH 서버 접속은 미검증 |
 | Chrome 선택 수집기 | manifest/클릭 대상 보존 테스트 | 실제 확장 설치·페이지 이동 수집은 수동 검증 필요 |
 | 웹 스토어·네이티브 exe | 미수행 | 후속 단계 |

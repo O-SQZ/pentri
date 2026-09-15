@@ -10,6 +10,8 @@
 
 ## 환경 변수
 
+GitHub Actions의 Artifacts에서 OS별 배포물을 받을 수 있다. Windows는 내부 ZIP, Mac/Linux는 내부 tar.gz를 풀어 사용한다. Mac/Linux 실행 권한은 tar.gz 내부에 보존한다. CI 산출물 보존 기간은 14일이며 정식 릴리스 설치 파일과 구별한다.
+
 | 변수 | 기본값 | 의미 |
 | --- | --- | --- |
 | PENTRI_PORT | 8787 | UI/API loopback 포트 |
