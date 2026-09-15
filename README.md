@@ -29,7 +29,7 @@ See the [Privacy Policy](privacy/개인정보처리방침.md) for details.
 ## Current Status
 
 - Public version: **v1.10** (`manifest.version`: `1.1.0`)
-- Distribution: Chrome Web Store
+- Distribution: Chrome Web Store (v1.10 update under review)
 - Source code: Public in this repository
 
 ## Local Installation
@@ -86,7 +86,7 @@ manifest.json
 ### 현재 상태
 
 - 공개 버전: **v1.10** (`manifest.version`: `1.1.0`)
-- 배포: Chrome Web Store
+- 배포: Chrome Web Store (v1.10 업데이트 심사 중)
 - 소스코드: 이 저장소에서 공개
 
 ### 로컬 설치
