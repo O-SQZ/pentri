@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "PenTri",
+  "version": "1.1.0",
+  "description": "Web vulnerability assessment toolkit for authorized penetration testers. Scans run manually from the active tab.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "downloads",
+    "tabs",
+    "scripting",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    },
+    "default_title": "PenTri"
+  },
+  "background": {
+    "service_worker": "background/sw.js"
+  },
+  "devtools_page": "devtools/devtools.html",
+  "version_name": "v1.10"
+}
